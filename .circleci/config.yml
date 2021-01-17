@@ -190,7 +190,7 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run: cd backend && npm install
-      - run: sudo pip install awscli
+      - run: pip install awscli
       - run:
           name: Run migrations
           no_output_timeout: 10m
@@ -215,8 +215,7 @@ jobs:
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
-      - destroy-environment
-      - revert-migrations
+      - destroy-environment      
 
   deploy-frontend:
     docker:
