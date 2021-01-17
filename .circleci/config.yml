@@ -192,7 +192,7 @@ jobs:
       - attach_workspace:
           at: ~/
           paths:
-            - project/
+            - project/backend
       - run:
           name: awscli install
           command: |
