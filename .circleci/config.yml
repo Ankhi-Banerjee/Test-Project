@@ -191,8 +191,8 @@ jobs:
           keys: [backend-build]
       - attach_workspace:
           at: ~/
-          paths:
-            - project/backend
+          #paths:
+            #- project/backend
       - run:
           name: awscli install
           command: |
