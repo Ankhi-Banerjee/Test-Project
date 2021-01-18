@@ -111,6 +111,7 @@ jobs:
             cd backend
             npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
+  
   deploy-infrastructure:
     docker:
       - image: amazon/aws-cli
@@ -294,9 +295,9 @@ jobs:
             pip install awscli
       - run:
           name: Deploy backend
-          no_output_timeout: 60m
+          no_output_timeout: 10m
           command: |
-            echo NODE_ENV=production >> "backend/.env"
+            echo ENVIRONMENT=production >> "backend/.env"
             echo TYPEORM_CONNECTION=postgres >> "backend/.env"
             echo TYPEORM_MIGRATIONS_DIR=./src/migrations >> "backend/.env"
             echo TYPEORM_ENTITIES=./src/modules/domain/**/*.entity.ts >> "backend/.env"
