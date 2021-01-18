@@ -14,7 +14,7 @@
 
 - name: Install Node modules
   shell: |
-    cd home/ubuntu/backend
+    cd /home/ubuntu/backend
     npm install
     npm install --only=dev
     
