@@ -326,11 +326,12 @@ jobs:
             pip install awscli
       - run:
           name: Get backend url & Backend smoke test.
-          command: |
-            BACKEND_IP=$(curl -H "token: 8aba2f9d-c4f8-41a8-9841-8c860d11c575" --request GET https://api.memstash.io/values/ipaddress)
-            echo "${BACKEND_IP}"
-            export API_URL= "http://${BACKEND_IP}:3030/api/status"
-            echo "${APT_URL}"
+          command: |           
+            BACKEND_URL=$(aws ec2 describe-instances \
+              --filters "Name=tag:Name, Values=backend-${CIRCLE_WORKFLOW_ID:0:7}" \
+              --query 'Reservations[*].Instances[*].PublicDnsName' \
+              --output text >> inventory.txt)
+            curl "http://${BACKEND_URL}:3030/api/status"
       - run:
           name: Frontend smoke test.
           command: |
