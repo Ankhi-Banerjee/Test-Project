@@ -327,7 +327,7 @@ jobs:
       - run:
           name: Get backend url & Backend smoke test.
           command: |       
-            BACKEND_URL=$(cat project/.circleci/ansible/inventory.txt)
+            BACKEND_URL=$(cat .circleci/ansible/inventory.txt)
             curl "http://${BACKEND_URL}:3030/api/status"
       - run:
           name: Frontend smoke test.
