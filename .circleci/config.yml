@@ -146,8 +146,8 @@ jobs:
           paths: [backend/node_modules]
           key: backend-build
        - ms-teams/report:
-                only_on_fail: true
-                webhook_url: $MS_TEAMS_WEBHOOK_URL
+          only_on_fail: true
+          webhook_url: $MS_TEAMS_WEBHOOK_URL
 
   test-frontend:
     docker:
