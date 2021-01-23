@@ -1,26 +1,9 @@
 version: 2.1
 
 orb-version: 1.0.1
-
-description: This orb allows to send notifications to your Microsoft Teams chat
-
-examples:
-  report-command:
-    description: Report the status of a job to MS Teams
-    usage:
-      version: 2.1
-      orbs:
-        ms-teams: cloudradar-monitoring/ms-teams@1.0.0
-      jobs:
-        build:
-          executor: docker
-          steps:
-            - checkout
-            - run: 
-            - ms-teams/report:
-                only_on_fail: true
-                webhook_url: $MS_TEAMS_WEBHOOK_URL
-
+orbs:
+  ms-teams: cloudradar-monitoring/ms-teams@1.0.0
+     
 commands:
   report:
     parameters:
@@ -158,10 +141,13 @@ jobs:
           command: | 
             cd backend
             npm i
-            npm run build
+            # npm run build
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
+       - ms-teams/report:
+                only_on_fail: true
+                webhook_url: $MS_TEAMS_WEBHOOK_URL
 
   test-frontend:
     docker:
