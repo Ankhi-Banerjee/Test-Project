@@ -99,7 +99,7 @@ commands:
                   << parameters.webhook_url >>
           when: on_fail
 
-commands:
+
   destroy-environment:
     description: Destroy back-end and front-end cloudformation stacks given a workflow ID
     parameters:
