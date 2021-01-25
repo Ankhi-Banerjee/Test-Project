@@ -1,5 +1,5 @@
 1. https://github.com/Ankhi-Banerjee/Test-Project/
-2. http://udapeople-kk1j287dhjppmz438.s3-website.ap-south-1.amazonaws.com/
-3. http://d3ijw1ovthus7l.cloudfront.net/
-4. https://ec2-3-85-93-40.compute-1.amazonaws.com/
+2. https://udapeople-kk1j287dhjppmz438.s3.ap-south-1.amazonaws.com/Dashboard.jpg
+3. https://d3ijw1ovthus7l.cloudfront.net/Dashboard.jpg
+4. http://54.89.211.188:3030/api/status
 5. http://ec2-54-163-165-212.compute-1.amazonaws.com:9090/graph
