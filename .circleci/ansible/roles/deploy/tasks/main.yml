@@ -14,11 +14,16 @@
     global: yes
     production: yes
     state: present
-    
+
+- name: Creates directory
+  file:
+    path: /home/ubuntu/backend/dist
+    state: directory
+
 - name: Copy backend dist files to remote server
   copy:
-    src: /root/project/backend/
-    dest: /home/ubuntu/
+    src: /root/project/backend/artifact.tar.gz
+    dest: /home/ubuntu/backend/
  
 - name: Install Node modules
   shell: |
