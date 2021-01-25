@@ -17,8 +17,8 @@
     
 - name: Copy backend dist files to remote server
   copy:
-    src: /root/project/backend/artifact.tar.gz
-    dest: /home/ubuntu/backend
+    src: /root/project/backend/artifact.tar.gz .
+    dest: /home/ubuntu
  
 - name: Install Node modules
   shell: |
