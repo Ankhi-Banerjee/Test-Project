@@ -220,6 +220,7 @@ jobs:
             pwd
             #ls -la
             touch backend/.env
+            echo NODE_ENV=production >> "backend/.env"
             echo ENVIRONMENT=production >> "backend/.env"
             echo TYPEORM_CONNECTION=postgres >> "backend/.env"
             echo TYPEORM_MIGRATIONS_DIR=./src/migrations >> "backend/.env"
